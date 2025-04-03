@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solver Function | David Pedraza</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/media/img/logo.png">
+</head>
+<body>
+    <main class="form" id="form">
+        <h1>Formulario de información</h1>
+        <section class="block-1 form-section">
+            <div class="input-box">
+                <label class="input-label">Tipo de variable</label>
+                <textarea required placeholder="Ejemplos: Producto, Articulo, etc." class="input" name="variable_type" id="variable_type" type="text"></textarea>
+                <span class="input-helper">Ejemplos: Producto, Articulo, etc.</span>
+            </div>
+            
+        </section>
+        <h1>Restricciones</h1>
+        <section class="second-part">
+            <div id="fieldsContainer" class="form-section">
+                <div class="field">
+                    <h4>Variable</h4>
+                    <h4>Valor</h4>
+                </div>
+                <div class="field">
+                    <h4 style="margin-bottom: 6px;">${counter}</h4>
+                    <div class="input-box">
+                        <input required placeholder="Ingrese el valor" class="input" name="value${counter}" id="value${counter}" type="text">
+                        <span class="input-helper">Ingrese el valor</span>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="button col-7" onclick="addFieldGroup()">
+                <span class="button__text">Añadir</span>
+                <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+            </button>
+        </section>
+        <button class="submit-button" onclick="submitData()">
+            <p class="submit">submit</p>
+        </button>
+    </main>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

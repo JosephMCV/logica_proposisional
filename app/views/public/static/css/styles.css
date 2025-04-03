@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #D4F7E7;
+}
+
+h1, h4{
+    font-family: "Montserrat";
+}
+
+h6{
+    font-family: "Space Grotesk";
+}
+
+.form{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form-section{
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.block-1{
+    grid-template-rows: auto auto;
+}
+
+.field{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-part{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.input {
+    position: relative;
+    border: none;
+    box-shadow: 0px 1.5px 0px 0px #858585;
+    padding: .5rem;
+    transition: all 200ms ease-in-out;
+    opacity: .8;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-label {
+    font-size: .8rem;
+    font-weight: bold;
+    color: #858585;
+    margin-bottom: 4px;
+    margin-left: 1px;
+    text-align: left;
+    font-family: "Space Grotesk";
+}
+
+.input-helper {
+    color: #858585;
+    font-size: .73rem;
+    margin-top: 6px;
+    margin-left: 1px;
+    visibility: hidden;
+    transform: translateY(-.5rem);
+    transition: all 100ms linear;
+    z-index: -1;
+    font-family: "Space Grotesk";
+    text-align: left;
+}
+
+.input::placeholder {
+    color: rgb(145, 145, 145);
+    font-size: .8rem;
+    font-family: "Space Grotesk";
+}
+
+.input::after {
+    content: attr(placeholder);
+    position: absolute;
+    color: #161616;
+    top: 0;
+    left: 0;
+}
+
+.input:focus {
+    border: none;
+    box-shadow: 0px 1.5px 0px 0px #21A366;
+    outline: none;
+}
+
+.input:focus + .input-helper {
+    visibility: visible;
+    transform: translateY(0rem);
+}
+
+.input:focus::placeholder {
+    visibility: hidden;
+}
+
+.button {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #34974d;
+    background-color: #3aa856;
+}
+
+.button, .button__icon, .button__text {
+    transition: all 0.3s;
+}
+
+.button .button__text {
+    transform: translateX(30px);
+    color: #fff;
+    font-weight: 600;
+}
+
+.button .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: #34974d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button .svg {
+    width: 30px;
+    stroke: #fff;
+}
+
+.button:hover {
+    background: #34974d;
+}
+
+.button:hover .button__text {
+    color: transparent;
+}
+
+.button:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.button:active .button__icon {
+    background-color: #2e8644;
+}
+
+.button:active {
+    border: 1px solid #2e8644;
+}
+
+/* From Uiverse.io by javierBarroso */ 
+.button_close {
+    position: relative;
+    width: 2em;
+    height: 2em;
+    border: none;
+    background: rgba(180, 83, 107, 0.11);
+    border-radius: 5px;
+    transition: background 0.5s;
+}
+
+.X_close {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1.5px;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.Y_close {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1.5px;
+    background-color: #fff;
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.close_close {
+    position: absolute;
+    display: flex;
+    padding: 0.8rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    top: -70%;
+    left: 50%;
+    width: 3em;
+    height: 1.7em;
+    font-size: 12px;
+    background-color: rgb(19, 22, 24);
+    color: rgb(187, 229, 236);
+    border: none;
+    border-radius: 3px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.button_close:hover {
+    background-color: rgb(211, 21, 21);
+}
+
+.button_close:active {
+    background-color: rgb(130, 0, 0);
+}
+
+.button_close:hover > .close {
+    animation: close 0.2s forwards 0.25s;
+}
+
+@keyframes close {
+    100% {
+        opacity: 1;
+    }
+}
+
+.submit-button {
+    width: 90px;
+    height: 40px;
+    position: relative;
+    font-family: var(--font);
+    color: #3b82f6;
+    font-weight: 600;
+    background-color: #fff;
+    border: none;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    transition: all ease 100ms;
+}
+
+.submit-button:hover {
+    background-color: #cbdcf8;
+}
+
+.submit-button:focus {
+    background-color: #cbdcf8;
+}
+
+.submit-button::before {
+    content: 'done✅';
+    position: absolute;
+    color: #3b82f6;
+    left: 0;
+    top: -14px;
+    right: 0;
+    transition: all ease 300ms;
+    opacity: 0%;
+}
+
+.submit-button:focus::before {
+    opacity: 100%;
+    transform: translatey(26px);
+}
+
+.submit {
+    transition: all ease 100ms;
+    opacity: 100%;
+}
+
+.submit-button:focus > .submit {
+    opacity: 0%;
+}
+
